@@ -234,8 +234,8 @@ def main():
     plot_confusion_matrices(trained, X_test, y_test)
     plot_roc_curves(trained, X_test, y_test)
 
-    if hasattr(best_model, "feature_importances_"):
-        plot_feature_importance(best_model, features)
+    rf_model = trained["Random Forest"]
+    plot_feature_importance(rf_model, features)
 
     # Save best model
     with open("models/best_model.pkl", "wb") as f:
